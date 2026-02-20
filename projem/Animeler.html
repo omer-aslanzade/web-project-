@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Animeler</title>
+</head>
+<body>
+ <nav class="navbar">
+    <div class="search logo">
+        <div class="logo">
+                <a href="index.html"><img src="logo.jpeg" alt="logo"></a>
+            </div>
+           
+          <div class="search-container">
+    <form class="search-box" action="Animeler.html" method="GET" autocomplete="off">
+        <input type="text" name="search" id="anime-search" placeholder=" Anime Axtar...">
+        <button type="button" id="search-btn"><i class="fas fa-search"></i></button>
+    </form>
+    <div id="suggestions-box" class="suggestions-box"></div>
+</div>
+</div>
+
+
+
+ <span class="logreg"  onclick="openModal()" >Giriş / Qeydiyyat</span>
+
+<div id="auth-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <div id="login-section">
+            <h2>Giriş</h2>
+            <input type="email" id="l-email" placeholder="E-poçt ünvanınız">
+            <input type="password" id="l-pass" placeholder="Şifrəniz">
+            <button class="main-btn" onclick="handleLogin()">Daxil Ol</button>
+            
+            <p class="switch-text">Hesabınız yoxdur? <a href="javascript:void(0)" onclick="toggleAuth('reg')">Qeydiyyatdan keçin</a></p>
+        </div>
+
+        <div id="reg-section" style="display:none;">
+            <h2>Qeydiyyat</h2>
+            <input type="text" id="r-name" placeholder="İstifadəçi adınız">
+            <input type="email" id="r-email" placeholder="E-poçt ünvanınız">
+            <input type="password" id="r-pass" placeholder="Şifrə təyin edin">
+            <button class="main-btn" onclick="handleRegister()">Hesab Yarat</button>
+            
+            <p class="switch-text">Artıq hesabınız var? <a href="javascript:void(0)" onclick="toggleAuth('login')">Giriş edin</a></p>
+        </div>
+
+        <div class="divider">və ya</div>
+        <button class="google-btn" onclick="googleIleGiris()">
+             Google ilə davam et
+        </button>
+    </div>
+</div>
+
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Ana Səhifə</a></li>
+                <li><a href="Animeler.html">Animelər</a></li>
+                <li><a href="#">Seriallar</a></li>
+                <li><a href="#">Haqqımızda</a></li>
+
+            </ul>
+
+        </nav>
+
+    
+
+
+
+
+
+
+
+<div class="anime-container">
+    <a href="anime.izle.html?id=1" class="anime-card" data-video="#" data-title="Attack on Titan">
+
+        <div class="img-box">
+            <img src="Attack-on-Titan3.jpg" alt="Attack on Titan">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="anime-info">
+            <h3>Attack on Titan </h3>
+            <p>Action, Drama, Fantasy</p>
+        </div>
+    </a>
+
+    <a href="anime.izle.html?id=2" class="anime-card" data-video="#" data-title="Hajime no Ippo">
+        <div class="img-box">
+            <img src="Hajime-no-ippo.jpg" alt="Hajime no Ippo">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="anime-info">
+            <h3>Hajime no Ippo</h3>
+            <p>Action, Sports</p>
+        </div>
+    </a>
+
+    <a href="anime.izle.html?id=3" class="anime-card" data-video="#" data-title="Berserk">
+       <div class="img-box">
+        <img src="BERSERK.jpg" alt="Berserk">
+        <div class="play-overlay"><i class="fas fa-play"></i></div>
+       </div>
+       <div class="anime-info">
+        <h3>Berserk</h3>
+        <p>Action, Fantasy, Horror</p>
+       </div>
+    </a>
+
+    <a href="anime.izle.html?id=4" class="anime-card" data-video="#" data-title="Blue Lock">
+        <div class="img-box">
+            <img src="blue-lock.jpg" alt="Blue Lock">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="anime-info">
+            <h3>Blue Lock</h3>
+            <p>Action, Sports</p>
+        </div>
+    </a>
+
+    <a href="anime.izle.html?id=5" class="anime-card" data-video="#" data-title="Chainsaw Man">
+        <div class="img-box">
+           <img src="chainsaw-man2.jpg" alt="Chainsaw Man">
+           <div class="play-overlay"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="anime-info">
+            <h3>Chainsaw Man</h3>
+            <p>Action, Horror</p>
+        </div>
+    </a>
+
+    <a href="anime.izle.html?id=6" class="anime-card" data-video="#" data-title="Cowboy Bebop">
+        <div class="img-box">
+            <img src="Cowboy-Bebop.jpg" alt="Cowboy Bebop">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+            <div class="anime-info">
+                <h3>Cowboy Bebop</h3>
+                <p>Action, Sci-Fi</p>
+            </div>
+
+        </div>
+    </a>
+
+    <a href="anime.izle.html?id=7" class="anime-card" data-video="#" data-title="Death Note">
+            <div class="img-box">
+                <img src="deathnote.jpg" alt="Death Note">
+                <div class="play-overlay"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="anime-info">
+                <h3>Death Note</h3>
+                <p>Mystery, Psychological</p>
+            </div>
+    </a>
+
+    <a href="anime.izle.html?id=8" class="anime-card" data-video="#" data-title="Demon Slayer">
+        <div class="img-box">
+            <img src="demon-slayer2.jpg" alt="Demon Slayer">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="anime-info">
+            <h3>Demon Slayer</h3>
+            <p>Action, Fantasy</p>
+        </div>
+    </a>
+
+    <a href="anime.izle.html?id=9" class="anime-card" data-video="#"data-title="Dragon Ball Z">
+        <div class="img-box">
+            <img src="Dragon-ball-z.jpg" alt="Dragon Ball Z">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="anime-info">
+            <h3>Dragon Ball Z</h3>
+            <p>Action, Adventure, Fantasy</p>
+        </div>
+    </a>
+
+    <a href="anime.izle.html?id=10" class="anime-card" data-video="#" data-title="Evangelion">
+        <div class="img-box">
+            <img src="Evangelion.jpg" alt="Evangelion">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="anime-info">
+            <h3>Evangelion</h3>
+            <p>Action, Mecha, Psychological</p>
+        </div>
+    </a>
+
+    <a href="anime.izle.html?id=11" class="anime-card" data-video="#" data-title="Fullmetal Alchemist: Brotherhood">
+        <div class="img-box">
+            <img src="fullmetal-alchemist-brotherhood.jpg" alt="Fullmetal Alchemist: Brotherhood">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="anime-info">
+            <h3>Fullmetal Alchemist: Brotherhood</h3>
+            <p>Action, Adventure, Fantasy</p>
+        </div>
+
+    </a>
+
+    <a href="anime.izle.html?id=12" class="anime-card" data-video="#" data-title="Haikyuu!!">
+        <div class="img-box">
+            <img src="haikyuu!!.jpg" alt="Haikyuu!!">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="anime-info">
+            <h3>Haikyuu!!</h3>
+            <p>Action, Sports</p>
+
+        </div>
+
+    </a>
+
+    <a href="anime.izle.html?id=13" class="anime-card" data-video="#" data-title="Hunter x Hunter">
+        <div class="img-box">
+            <img src="Hunter-x-Hunter.jpg" alt="Hunter x Hunter">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="anime-info">
+            <h3>Hunter x Hunter</h3>
+            <p>Action, Adventure, Fantasy</p>
+
+
+        </div>
+
+    </a>
+
+    <a href="anime.izle.html?id=14" class="anime-card" data-video="#"  data-title="Jujutsu Kaisen">
+        <div class="img-box">
+            <img src="jujutsu-kaisen.jpg" alt="Jujutsu Kaisen">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="anime-info">
+            <h3>Jujutsu Kaisen</h3>
+            <p>Action, Horror, Supernatural</p>
+        </div>
+
+    </a>
+
+    <a href="anime.izle.html?id=15" class="anime-card" data-video="#" data-title="Kuroko no Basket">
+        <div class="img-box">
+            <img src="kuroko-no-basket.jpg" alt="Kuroko no Basket">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="anime-info">
+            <h3>Kuroko no Basket</h3>
+            <p>Action, Sports</p>
+        </div>
+
+    </a>
+
+    <a href="anime.izle.html?id=16" class="anime-card" data-video="#" data-title="Naruto Shippuden">
+        <div class="img-box">
+            <img src="Naruto Shippuden.jpg" alt="Naruto Shippuden">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="anime-info">
+            <h3>Naruto Shippuden</h3>
+            <p>Action, Adventure, Fantasy</p>
+        </div>
+    </a>
+
+    <a href="anime.izle.html?id=17" class="anime-card" data-video="#" data-title="One Punch Man">
+        <div class="img-box">
+            <img src="ONE-PUNCH-MAN.jpg" alt="One Punch Man">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="anime-info">
+            <h3>One Punch Man</h3>
+            <p>Action, Comedy, Superhero</p>
+        </div>
+    </a>
+
+    <a href="anime.izle.html?id=18" class="anime-card" data-video="#" data-title="Tokyo Revengers">
+        <div class="img-box">
+        <img src="Tokyo Revengers.jpg" alt="Tokyo Revengers">
+        <div class="play-overlay"><i class="fas fa-play"></i></div>
+    </div>
+    <div class="anime-info">
+        <h3>Tokyo Revengers</h3>
+        <p>Action, Drama, Supernatural</p>
+    </div>
+    </a>
+
+    <a href="anime.izle.html?id=19" class="anime-card" data-video="#" data-title="Tokyo Ghoul">
+        <div class="img-box">
+            <img src="Tokyo-Ghoul.jpg" alt="Tokyo Ghoul">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="anime-info">
+            <h3>Tokyo Ghoul</h3>
+            <p>Action, Horror, Supernatural</p>
+        </div>
+
+    </a>
+
+    <a href="anime.izle.html?id=20" class="anime-card" data-video="#" data-title="Vinland Saga">
+        <div class="img-box">
+            <img src="vinland-saga.jpg" alt="Vinland Saga">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="anime-info">
+            <h3>Vinland Saga</h3>
+            <p>Action, Adventure, Historical</p>
+        </div>
+
+    </a>
+
+    <a href="anime.izle.html?id=21" class="anime-card" data-video="#" data-title="Wind Breaker">
+        <div class="img-box">
+            <img src="Wind-breaker2.jpg" alt="Wind Breaker">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="anime-info">
+            <h3>Wind Breaker</h3>
+            <p>Action, Sports</p>
+        </div>
+    </a>
+
+    <a href="anime.izle.html?id=22" class="anime-card" data-video="#" data-title="Solo Leveling">
+        <div class="img-box">
+            <img src="solo-leveling.jpg" alt="Solo Leveling">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="anime-info">
+            <h3>Solo Leveling</h3>
+            <p>Action, Fantasy, Supernatural</p>
+        </div>
+    </a>
+
+    <a href="anime.izle.html?id=23" class="anime-card" data-video="#" data-title="Oshi no Ko">
+        <div class="img-box">
+            <img src="Oshi-no-ko.jpg" alt="Oshi no Ko">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="anime-info">
+            <h3>Oshi no Ko</h3>
+            <p>Drama, Mystery, Supernatural</p>
+        </div>
+    </a>
+
+    <a href="anime.izle.html?id=24" class="anime-card" data-video="#" data-title="Spy x Family">
+        <div class="img-box">
+            <img src="Spy-x-Family.jpg" alt="Spy x Family">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="anime-info">
+            <h3>Spy x Family</h3>
+            <p>Action, Comedy, Spy</p>
+        </div>
+    </a>
+
+    <a href="anime.izle.html?id=25" class="anime-card" data-video="#" data-title="Hells Paradise">
+        <div class="img-box">
+            <img src="Hells-Paradise.jpg" alt="Hells Paradise">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="anime-info">
+            <h3>Hells Paradise</h3>
+            <p>Action, Adventure, Fantasy</p>
+        </div>
+    </a>
+
+    <a href="anime.izle.html?id=26" class="anime-card" data-video="#" data-title="Kaiju No. 8">
+        <div class="img-box">
+            <img src="Kaiju-No-.8.jpg" alt="Kaiju No. 8">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="anime-info">
+            <h3>Kaiju No. 8</h3>
+            <p>Action, Comedy, Supernatural</p>
+        </div>
+    </a>
+
+    <a href="anime.izle.html?id=27" class="anime-card" data-video="#" data-title="Bleach-TYBW">
+        <div class="img-box">
+            <img src="Bleach-TYBW.jpg" alt="Bleach-TYBW">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+        </div>
+        <div class="anime-info">
+            <h3>Bleach-TYBW</h3>
+            <p>Action, Adventure, Fantasy</p>
+        </div>
+
+    </a>
+
+    <a href="anime.izle.html?id=28" class="anime-card" data-video="#" data-title="Sakamoto days">
+        <div class="img-box">
+            <img src="Sakamoto days2.jpg" alt="Sakamoto days">
+            <div class="play-overlay"><i class="fas fa-play"></i></div>
+
+        </div>
+        <div class="anime-info">
+            <h3>Sakamoto days</h3>
+            <p>action,criminal</p>
+
+        </div>
+
+    </a>
+
+
+    
+
+   
+
+
+
+
+
+</div>
+
+
+
+    
+<div id="video-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <iframe id="video-player" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+
+
+
+
+    <script src="izle.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,571 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+
+
+body {
+
+    background: #000000;
+    background-size: cover;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+html,body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+
+}
+.header{
+    position: absolute;
+}
+
+
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0a0a0a;
+    padding: 5px 20px;
+    width: 100%;
+    height: 100px;
+    min-height: 70px;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    box-shadow: 0px 4px 15px rgb(232, 9, 9);
+}
+.logo {
+    display: flex;
+    align-items: center;
+    height: 60%;
+    font-weight: bold;
+    color: #ea0606;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+.logo img {
+    object-fit: cover;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    border-radius: 45px;
+      box-shadow: 0 0 10px rgb(242, 7, 7);
+   
+}
+.logo img:hover {
+    transform: scale(1.1);
+} 
+
+@media(min-width: 769px){
+    .search-box{
+        margin-left: 150px;
+    }
+    .logo img{
+        height: 80px;
+        margin-top: 10px;
+    }
+    .hero-video{
+        width: 210vw;
+    }
+    
+}
+@media(max-width: 768px){
+    .search-box{
+        margin-left: 18px;
+        margin-top: 26px;
+    }
+    .logo{
+        margin-top: 26px;
+    }
+    .nav-links{
+        margin-top: 6px;
+    }
+    .navbar{
+        padding-bottom: 140px;
+    }
+    
+    .logreg{
+    margin-left: 230px;   
+    border: 1px solid rgb(242, 7, 7); 
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 50px;
+    }
+    .hero-video {
+        width: 100% !important; /* Telefonda eni ekran qədər olsun */
+        height: auto !important; /* Hündürlüyü videonun öz nisbətinə burax */
+        object-fit: contain !important; /* Yaxınlaşdırma (zoom) etməsin */
+        top: 0;
+        left: 0;
+        transform: none; /* Mərkəzləməni ləğv et ki, video yuxarıdan başlasın */
+    }
+    
+    .hero-section {
+        height: 50vh; /* Telefonda bölməni kiçilt ki, video cırılmasın */
+    }
+
+
+    
+    
+
+    
+
+}
+
+
+
+
+
+
+
+.nav-links  {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+
+    
+}
+.nav-links a {
+    justify-content: space-between;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    
+}
+.nav-links a:hover {
+    color: #ff0000ee;
+}
+.search-box {
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.1);
+    border: 2px solid #ec0606;
+    border-radius: 50px;
+    align-items: center;
+    padding: 5px 70px;
+    margin-bottom: 7px;
+    
+}
+.search-box input {
+    flex: 1 1 100%;
+    order: 3;
+    margin-top: 10px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    width: 80%;
+    padding: 5px;
+}
+.search-box button {
+    background: transparent;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.search-box button:hover {
+    color: #ff0000ee;
+    transform: scale(1.1);
+}
+
+
+.auto-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.search-container {
+    position: relative;
+}
+.suggestions-box {
+    position: absolute;
+    width: 100%;
+    background: #1a1a1a;
+    border: none;
+    z-index: 3;
+    top: 100%;
+}
+
+
+.logreg{
+    cursor:pointer; 
+    color:rgb(255, 255, 255); 
+    font-weight:bold;
+    border: 1px solid rgb(242, 7, 7); 
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 0 30px rgb(242, 7, 7);
+
+
+}
+
+
+.modal { 
+    display: none; 
+    position: fixed; 
+    z-index: 999; 
+    left: 0;
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0,0,0,0.9);
+    }
+
+.modal-content { 
+    background: #181818;
+    margin: 8% auto;
+    padding: 30px; 
+    width: 350px; 
+    border-radius: 15px; 
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 20px rgba(255,0,0,0.3);
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: #f10000;
+}
+
+input { 
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px; 
+    border: 1px solid #333;
+    background: #222;
+    color: white;
+    box-sizing: border-box;
+}
+
+.main-btn { 
+    width: 100%; 
+    padding: 12px; 
+    background: #ff0000; 
+    color: white; 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    margin-top: 10px;
+}
+
+.switch-text { margin-top: 20px; 
+    font-size: 14px; 
+    color: #bbb; 
+}
+.switch-text a { 
+    color: #ff0000; 
+    text-decoration: none; 
+    font-weight: bold; 
+}
+
+.google-btn { 
+    width: 100%; 
+    padding: 10px;
+     background: white; 
+     color: black; 
+    border-radius: 8px; 
+    border: none; 
+    cursor: pointer; 
+    margin-top: 15px; 
+    font-weight: bold;
+}
+
+.close { float: right; 
+    font-size: 25px; 
+    cursor: pointer; 
+    color: #555;
+}
+
+.hero-section{
+    position: relative;
+    width:100%;
+    height: 90vh;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+.hero-video{
+    position: absolute;
+    top: -50px;
+    left: -150px;
+    width: 110vw;
+    height: auto;
+    object-fit: cover;
+    z-index: -1;
+    transform: translate(-50,-50);
+}
+
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Videonu bir az qaraldır ki, yazılar görünsün */
+    z-index: 0;
+
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-left: 60px;
+}
+
+.hero-content h1{
+    margin-top: 380px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #000000;
+    margin-right: 40px;
+}
+.hero-content p{
+    color: #fffafa;
+    margin-right: 58px;
+}
+.videoadi{
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 0 0 20px #ea0606;
+    margin-bottom: 10px;
+}
+.desc{
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+.hero-btns button{
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    transition: 0.3s;
+}
+.hero-btns a{
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    background: #e90d0de6;
+    backdrop-filter: blur(5px);
+    color: white;
+    margin: left 25px;;
+}
+.hero-video{
+    margin-left: 150px;
+}
+
+
+
+
+
+
+
+
+
+
+video{
+    width:auto;
+    height: auto;
+    margin-top: 20px;
+
+}
+
+.anime-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 5px;
+    justify-content: center;
+    margin-top: 20px;
+}
+.anime-card {
+    text-decoration: none;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgb(242, 7, 7);
+    transition: transform 0.3s ease;
+}
+.anime-card:hover {
+    transform: scale(1.05);
+    border-color: #ea0606;
+    box-shadow: 0 10 20px rgba(234, 6, 6, 0.7);
+}
+.img-box {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.play-overlay {
+    color: #fe0000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.img-box:hover .play-overlay {
+    opacity: 1;
+}
+.anime-info {
+   padding: 5px;
+   color: white;
+}
+.anime-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+.episode-list {
+    display: flex;
+    flex-wrap: wrap; /* Düymələr sığmayanda növbəti sətrə keçsin */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.episode-btn {
+    padding: 10px 20px;
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.episode-btn:hover {
+    background-color: #cc3700;
+    transform: scale(1.05);
+}
+
+.player-wrapper {
+    position:relative;
+    padding-bottom: 56.25%; /* 16:9 nisbəti */
+    height: 0;
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 10 15px rgb(232, 9, 9);
+}
+.player-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+.anime-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 10px;
+    padding: 20px;
+    overflow-x: auto; /* Yan-yana sürüşmə */
+    
+ 
+}
+
+.anime-card-mini {
+    padding: 10px;
+    background: #000000;
+    border-radius: 10px;
+    min-width: 200px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(224, 11, 11, 0.655);
+    
+    
+}
+
+.anime-card-mini:hover {
+    transform: translateY(-5px);
+    border-color: #ff0606;
+    box-shadow: 0 0 15px rgb(255, 8, 8); /* Neon effekti */
+}
+
+.anime-card-mini img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.scroll-row {
+    display:flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 15px;
+    scroll-snap-type: x mandatory;
+}
+.scroll-row .anime-card-mini {
+    flex: 0 0 200px;
+    scroll-snap-align: start;
+}
+.scroll-row::-webkit-scrollbar {
+    height: 7px;
+}
+.scroll-row::-webkit-scrollbar-thumb {
+    background: rgba(211, 11, 11, 0.549);
+    border-radius: 10px;
+}
+
+
+
+
+

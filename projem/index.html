@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="az">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="style.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+        <title>
+            Anime.Az.dublaj.izle
+        </title>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="search logo">
+                <div class="logo">
+                <a href="index.html"><img src="logo.jpeg" alt="Logo"></a>
+            </div>
+           
+            <div class="search-box">
+    <form action="Animeler.html" method="GET">
+        <input type="text" id="anime-search" name="search" placeholder=" Anime Axtar...">
+        <button type="button"><i class="fas fa-search"></i></button>
+    </form>
+</div>
+</div>
+
+
+
+<span class="logreg"  onclick="openModal()" >Giriş / Qeydiyyat</span>
+
+<div id="auth-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <div id="login-section">
+            <h2>Giriş </h2>
+            <input type="email" id="l-email" placeholder="E-poçt ünvanınız">
+            <input type="password" id="l-pass" placeholder="Şifrəniz">
+            <button class="main-btn" onclick="handleLogin()">Daxil Ol</button>
+            
+            <p class="switch-text">Hesabınız yoxdur? <a href="javascript:void(0)" onclick="toggleAuth('reg')">Qeydiyyatdan keçin</a></p>
+        </div>
+
+        <div id="reg-section" style="display:none;">
+            <h2>Qeydiyyat</h2>
+            <input type="text" id="r-name" placeholder="İstifadəçi adınız">
+            <input type="email" id="r-email" placeholder="E-poçt ünvanınız">
+            <input type="password" id="r-pass" placeholder="Şifrə təyin edin">
+            <button class="main-btn" onclick="handleRegister()">Hesab Yarat</button>
+            
+            <p class="switch-text">Artıq hesabınız var? <a href="javascript:void(0)" onclick="toggleAuth('login')">Giriş edin</a></p>
+        </div>
+
+        <div class="divider">və ya</div>
+        <button class="google-btn" onclick="googleIleGiris()">
+             Google ilə davam et
+        </button>
+    </div>
+</div>
+           
+            <ul class="nav-links">
+                <li><a href="index.html">Ana Səhifə</a></li>
+                <li><a href="Animeler.html">Animelər</a></li>
+                <li><a href="#">Seriallar</a></li>
+                <li><a href="#">Haqqımızda</a></li>
+
+            </ul>
+ </nav>  <br>
+
+ <section class="hero-section">
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="Solo Leveling Edit (2).mp4" type="video/mp4" media="(min-width: 769px)">
+        <source src="Solo Leveling Edit (3).mp4" type="video/mp4" media="(max-width: 768px)">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1 class="videoadi">Solo Leveling</h1>
+        <p class="desc">Zəiflərin ən zəifindən, kölgələrin hökmdarına!</p>
+    </div>
+    <div class="hero-btns">
+        <a href="anime.izle.html?id=22">İndi İzlə</a>
+ </section>
+
+<br><br>
+
+
+
+<section class="home-category">
+    <div class="category-header">
+        <h2>🔥Trend Animelər</h2>
+    </div>
+    <div id="trend-movies" class="anime-row scroll-row"></div>
+</section>
+
+<br><br>
+
+<section class="home-category">
+<div class="category-header">
+    <h2>🕒 Yeni Bölümlər</h2>
+</div>
+<div id="new-movies" class="anime-row"></div>
+</section>
+
+
+
+      
+<script src="izle.js"></script>
+<script src="home.js"></script>
+<script src="auth.js"></script>
+
+
+
+    </body>
+</html>
